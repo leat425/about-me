@@ -1,0 +1,35 @@
+body {
+  background-color: gray;  
+}
+
+img {
+  width: 250px;
+  margin: 25px;
+
+}
+h1 {
+  font-size: 40px;
+  color:  #7a0d0d;
+  margin: 20px;
+
+}
+
+h2 {
+  font-size: 30px;
+  color: rgb(128, 41, 0);
+  margin: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  color: rgb(128, 41, 0);
+  margin: 35px;
+  
+}
+p {
+  color:rgb(94, 31, 31);
+  margin-top: 10px;
+  margin: 10px;
+  padding-left: 40px;
+
+}

@@ -138,4 +138,6 @@ if(guessCorrected === false)
 {
   alert('Your guesses are close but the cities that I visited are: '+ visitedCity);
 }
-alert('You have correctly answered ' + counter + ' out of 7 questions.');
+
+//Last alert notify user the number of correct guesses
+alert(userName + ', you have correctly answered ' + counter + ' out of 7 questions. Thank you for playing the game.');

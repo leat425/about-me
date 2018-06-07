@@ -1,6 +1,13 @@
 # about-me
 Code 201 Week 1 Project - About me project
 
+6/7/2018 Pair Programming 
+Driver: J Christie
+Navigator: Anh-Thu!!!!
+
+6/7/2018 Pair Programming Second commit/test
+Driver: J Christie
+Navigator: Anh-Thu!!!!
 
 Wednesday, 6/6/2018: Day 3 Lab
 

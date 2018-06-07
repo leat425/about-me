@@ -70,35 +70,63 @@
 // }
 
 
-//Question 6: Please guess how many nieces I have?
-var myNieces = 5;
+// //Question 6: Please guess how many nieces I have?
 
-for (var i = 0; i < 4 ; i++) {
-  console.log('Number of try: ', i);
+// var myNieces = 5;
 
-  var guessNieces = parseInt(prompt('1-Please guess how many nieces I have?'));
-  console.log('Confirm user input is: ' + guessNieces);
-  console.log(guessNieces > myNieces);
+// for (var i = 0; i < 4 ; i++) {
+//   console.log('Number of try: ', i);
 
-  if (guessNieces === myNieces) {
-    alert('That is correct! I have 5 wonderful nieces');
-    break;
-  } else if (guessNieces > myNieces) {
-    if (i === 3) {
-      alert('That last guess was too high and also incorrect. That was the 4th attempt, maybe we should move on');
-    } else {
-      alert('Great guess but that number is too high, please guess again');
-    }
-  } else {
-    if (i === 3) {
-      alert('That last guess was too low and also incorrect. That was the 4th attempt, maybe we should move on');
-    } else {
-      alert('Great guess but that number is too low, please guess again.');
-    }
+//   var guessNieces = parseInt(prompt('Please guess how many nieces I have?'));
+//   console.log('Confirm user input is: ' + guessNieces);
+
+//   if (guessNieces === myNieces) {
+//     alert('That is correct! I have 5 wonderful nieces');
+//     break;
+//   } else if (guessNieces > myNieces) {
+//     if (i === 3) {
+//       alert('That last guess was too high and also incorrect. That was the 4th attempt, maybe we should move on');
+//     } else {
+//       alert('Great guess but that number is too high, please guess again');
+//     }
+//   } else {
+//     if (i === 3) {
+//       alert('That last guess was too low and also incorrect. That was the 4th attempt, maybe we should move on');
+//     } else {
+//       alert('Great guess but that number is too low, please guess again.');
+//     }
+//   }
+// }
+
+//Question 7: Can you guess one of the 5 cities in the U.S. that I have visited?
+
+var visitedCity = ['san francisco', 'chicago', 'st.louis', 'las vegas', 'minnesota'];
+var guessCorrected = false;
+
+for(var j = 0; j < 6; j++) {
+  var guessCity = prompt('Can you guess one of the cities in the U.S. that I have visited?').toLowerCase();
+  console.log('Confirm user input: '+ guessCity);
+
+  for (var i = 0; i < visitedCity.length; i++) {
+
+    if (guessCity === visitedCity[i]) {
+      guessCorrected = true;
+      break;
+    } 
   }
+
+  if(guessCorrected === true)
+  {
+    alert('Great job! You have guess corrected. The cities that I have visited are ' + visitedCity);
+    break;
+  }
+  else { 
+    alert('Please try to guess again');
+  }
+
 }
 
-
-
-// //Question 7: Can you guess one of the cities in the U.S. that I have visited?
-// var visitedCity = ['San Francisco', ]
+if(guessCorrected === false)
+{
+  alert('Your guesses are close but the cities that I visited are: '+ visitedCity);
+}

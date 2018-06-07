@@ -110,20 +110,21 @@ for (var i = 0; i < 4 ; i++) {
 var visitedCity = ['san francisco', 'chicago', 'st.louis', 'las vegas', 'minnesota'];
 var guessCorrected = false;
 
+//first loop to limit user to 6 guesses
 for(var j = 0; j < 6; j++) {
   var guessCity = prompt('Can you guess one of the cities in the U.S. that I have visited?').toLowerCase();
   console.log('Confirm user input: '+ guessCity);
 
+  //second loop (nested inside) to check answer against array strings for correction. False will keep the user inside loop or until 6 tries.
   for (var i = 0; i < visitedCity.length; i++) {
-
     if (guessCity === visitedCity[i]) {
       guessCorrected = true;
+      console.log('Confirm user guess one of the city correctly: '+ guessCity);
       break;
     }
   }
-
-  if(guessCorrected === true)
-  {
+  //Guess corrected
+  if(guessCorrected === true) {
     alert('Great job! You have guess corrected. The cities that I have visited are ' + visitedCity);
     counter++;
     break;
@@ -131,12 +132,10 @@ for(var j = 0; j < 6; j++) {
   else {
     alert('Please try to guess again');
   }
-
 }
-
+//Incorrect guess
 if(guessCorrected === false)
 {
   alert('Your guesses are close but the cities that I visited are: '+ visitedCity);
 }
-
 alert('You have correctly answered ' + counter + ' out of 7 questions.');

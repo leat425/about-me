@@ -1,102 +1,81 @@
-'use strict';
+// 'use strict';
+
 var counter = 0;
 
-var answerFalse = 'Please re-enter answer in Yes or No format';
+// // //Ask for user preferred name
 
-alert('This page will contain information about myself Before it displays, let\'s start with a silly game where you will answer with a Yes or No to a series of questions.  Are you ready to start the game?');
-var userName = prompt('Firstly, what is your preferred name?');
-console.log('Confirm user input for preferred name: '+ userName);
+// // alert('This page will contain information about myself Before it displays, let\'s start with a silly game where you will answer with a Yes or No to a series of questions.  Are you ready to start the game?');
+// // var userName = prompt('Firstly, what is your preferred name?');
+// // console.log('Confirm user input for preferred name: '+ userName);
+
+// var answerFalse = 'Please re-enter answer in Yes or No format';
+// var answerInCorrect = 'Incorrect guess';
+// var answerCorrect = 'Correct guess';
+
+// var questionOne = 'Do you think I have any coding experience?';
+// var questionTwo = 'I am very tall, do you think I am over 6 feet tall?';
+// var questionThree = 'Do I have any sisters?';
+// var questionFour = 'If I told you my dad is Bruce Lee, would you believe me?';
+// var questionFive = 'Do you think I can become a software developer in the future?';
+
+// function questionFunction(n) {
+//   var userInput = prompt(n).toLowerCase();
+//   console.log('User input: ' + userInput);
+//   if (userInput === 'no' || userInput === 'n') {
+//     alert(answerCorrect);
+//     counter++;
+//   } else if (userInput === 'yes' || userInput === 'y'){
+//     alert(answerInCorrect);
+//   } else {
+//     alert(answerFalse);
+//   }
+// }
+// questionFunction(questionOne);
+// questionFunction(questionTwo);
+// questionFunction(questionThree);
+// questionFunction(questionFour);
+// questionFunction(questionFive);
+
+// console.log('Number of questions guess correct: ' + counter);
+
+//Question 6: Please guess how many nieces I have?
 
 
-function questionFunction(k) {
-  var userInput = prompt("This is the first question")
-  console.log('User Input: ' + userInput);
-  if (userInput === "no" || userInput === 'n') {
-    alert('Correct');
-  } else if (userInput === 'yes' || userInput === 'y'){
-    alert(userName +', thanks for thinking so highly of me.  Reality, I have no experience at all!');
-  } else {
-    alert(answerFalse);
+var tooHigh = 'Your guess is too high';
+var tooLow = 'Your guess is too low';
+
+var guessCorrected = false;
+for (var i = 0; i < 4; i++) {
+  guessCorrected = guessNieces();
+  if (guessCorrected === true) {
+    counter++;
+    break;
+
   }
 }
+if (guessCorrected === false) {
+  alert('Excellent try but that is the 4th attempt. I only have 5 nieces');
+}
 
-questionFunction();
+function guessNieces() {
+  var userInput = parseInt(prompt('Please guess how many nices I have'));
+  console.log('User input: '+ userInput);
+  if (userInput === 5) {
+    alert(answerCorrect);
+    counter++;
+    return true;
 
+  } else if (userInput > 5) {
+    alert(tooHigh);
+  } else {
+    alert(tooLow);
 
-// alert('This page will contain information about myself Before it displays, let\'s start with a silly game where you will answer with a Yes or No to a series of questions.  Are you ready to start the game?');
-
-// //Ask for user preferred name
-
-
-// //Question 1:
-// var codeExperience = prompt('Do you think I have any coding experience?').toLowerCase();
-// console.log('Confirm user input for having coding experience: '+ codeExperience);
-
-// if (codeExperience === 'no' || codeExperience === 'n') {
-//   alert(userName +', you are correct! I have no coding experience');
-//   counter++;
-// } else if (codeExperience === 'yes' || codeExperience === 'y') {
-//   alert(userName +', thanks for thinking so highly of me.  Reality, I have no experience at all!');
-// } else {
-//   alert('Please re-enter answer in Yes or No format');
-// }
-
-// //Question 2:
-// var veryTall = prompt('I am very tall, do you think I am over 6 feet tall? ').toLowerCase();
-// console.log('Confirm user input for over 6 feet tall: ' + veryTall);
-
-// if (veryTall === 'no' || veryTall === 'n') {
-//   alert('You are correct! I am under 6 feet tall');
-//   counter++;
-// } else if (veryTall === 'yes' || veryTall === 'y') {
-//   alert('Thanks for being so polite but we all know that is not true!');
-// } else {
-//   alert('Please re-enter answer in Yes or No format');
-// }
-
-// //Question 3
-// var anySister = prompt('Do I have any sisters? ').toLowerCase();
-// console.log('Confirm user input for having any sister: ' + anySister);
-
-// if (anySister === 'no' || anySister ==='n') {
-//   alert('You are correct! I have no sister');
-//   counter++;
-// } else if (anySister === 'yes' || anySister === 'y') {
-//   alert('Nope, I have no sister');
-// } else {
-//   alert('Please re-enter answer in Yes or No format');
-// }
-
-// //Question 4
-// var myDad = prompt('If I told you my dad is Bruce Lee, would you believe me? ').toLowerCase();
-// console.log('Confirm user input for Bruce Lee as my dad: ' + myDad);
-
-// if (myDad === 'no' || myDad === 'n') {
-//   alert('Correct, my dad is NOT Bruce Lee');
-//   counter++;
-// } else if (myDad === 'yes' || myDad === 'y') {
-//   alert('Sorry, my dad is not Bruce Lee');
-// } else {
-//   alert('Please re-enter answer in Yes or No format');
-// }
-
-// //Question 5
-// var softwareDeveloper = prompt('Do you think I can become a software developer in the future?').toLowerCase();
-// console.log('Confirm user input for becoming a software developer: ' + softwareDeveloper);
-
-// if (softwareDeveloper === 'no' || softwareDeveloper === 'n') {
-//   alert('Perhaps you are correct, I will not become a developer');
-//   counter++;
-// } else if (softwareDeveloper === 'yes' || softwareDeveloper === 'y') {
-//   alert('I hope so too!');
-// } else {
-//   alert('Please re-enter answer in Yes or No format');
-
-//   alert('Thanks for answering all the silly questions');
-// }
+  }
+  return false;
+}
 
 
-// //Question 6: Please guess how many nieces I have?
+
 
 // var myNieces = 5;
 

@@ -1,16 +1,15 @@
 'use strict';
-
 var counter = 0;
 
 //Ask for user preferred name
 
-alert('This page will contain information about myself Before it displays, let\'s start with a silly game where you will answer with a Yes or No to a series of questions.  Are you ready to start the game?');
+alert('This page will contain information about myself. Before it displays, let\'s start with a silly game where you will answer with a Yes or No to a series of questions.  Are you ready to start the game?');
 var userName = prompt('Firstly, what is your preferred name?');
 console.log('Confirm user input for preferred name: '+ userName);
 
 var answerFalse = 'Please re-enter answer in Yes or No format';
-var answerInCorrect = 'Incorrect guess';
-var answerCorrect = 'Correct guess';
+var answerInCorrect = 'incorrect guess';
+var answerCorrect = 'correct guess';
 
 var questionOne = 'Do you think I have any coding experience?';
 var questionTwo = 'I am very tall, do you think I am over 6 feet tall?';
@@ -18,14 +17,14 @@ var questionThree = 'Do I have any sisters?';
 var questionFour = 'If I told you my dad is Bruce Lee, would you believe me?';
 var questionFive = 'Do you think I can become a software developer in the future?';
 
-function questionFunction(n) {
-  var userInput = prompt(n).toLowerCase();
+function questionFunction(question) {
+  var userInput = prompt(question).toLowerCase();
   console.log('User input: ' + userInput);
   if (userInput === 'no' || userInput === 'n') {
-    alert(answerCorrect);
+    alert(userInput + ' is a ' + answerCorrect);
     counter++;
   } else if (userInput === 'yes' || userInput === 'y'){
-    alert(answerInCorrect);
+    alert(userInput + ' is an ' + answerInCorrect);
   } else {
     alert(answerFalse);
   }
@@ -42,24 +41,25 @@ questionFunction(questionFive);
 var tooHigh = 'Your guess is too high';
 var tooLow = 'Your guess is too low';
 
-var guessCorrected = false;
-for (var i = 0; i < 4; i++) {
-  guessCorrected = guessNieces();
-  if (guessCorrected === true) {
-    counter++;
-    break;
-
-  }
-}
+var guessCorrected = guessNieces();
 if (guessCorrected === false) {
-  alert('Excellent try but that is the 4th attempt. I only have 5 nieces');
+  guessCorrected = guessNieces();
+  if (guessCorrected === false) {
+    guessCorrected = guessNieces();
+    if (guessCorrected === false) {
+      guessCorrected = guessNieces();
+      if (guessCorrected === false) {
+        alert('Excellent try but that is the 4th attempt. I only have 5 nieces');
+      }
+    }
+  }
 }
 
 function guessNieces() {
-  var userInput = parseInt(prompt('Please guess how many nices I have'));
+  var userInput = parseInt(prompt('Please guess how many nieces I have'));
   console.log('User input for number of nices : '+ userInput);
   if (userInput === 5) {
-    alert('Fantastic guess and it is correct!');
+    alert('Fantastic guess and ' + userInput + ' is correct!');
     return true;
 
   } else if (userInput > 5) {
@@ -77,22 +77,29 @@ var cityCorrected = false;
 
 var visitedCity = ['san francisco', 'chicago', 'st.louis', 'las vegas', 'minnesota'];
 
-for (var i = 0; i < 7; i++) {
+cityCorrected = guessCity();
+if (cityCorrected === false); {
   cityCorrected = guessCity();
-  if (cityCorrected === true) {
-    counter++;
-    break;
+  if (cityCorrected === false); {
+    cityCorrected = guessCity();
+    if (cityCorrected === false); {
+      cityCorrected = guessCity();
+      if (cityCorrected === false); {
+        cityCorrected = guessCity();
+        if (cityCorrected === false); {
+          cityCorrected = guessCity();
+          cityCorrected = false;
+          alert('Your guesses are close but that is the 6th attempt.  The cities that I visited are San Francisco, Chicago, St.Louis, Las Vegas, Minnesota');
+        }
+      }
+    }
   }
-}
-
-if (cityCorrected === false) {
-  alert('Your guesses are close but the cities that I visited are San Francisco, Chicago, St.Louis, Las Vegas, Minnesota');
 }
 
 function guessCity() {
   var userInput = prompt('Can you guess one of the cities in the U.S. that I have visited?').toLowerCase();
   console.log('User input City: ' + userInput);
-  if (userInput === visitedCity[i]) {
+  if (visitedCity.includes(userInput)) {
     alert('That is correct!  Here are the cities that I visited: San Francisco, Chicago, St.Louis, Las Vegas, Minnesota');
     return true;
   }

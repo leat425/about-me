@@ -2,43 +2,39 @@ body {
   background-color: gray;  
 }
 
-img {
-  width: 250px;
-  margin: 25px;
-
-}
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   color:  #7a0d0d;
-  margin: 20px;
-
+  margin: 40px;
 }
 
-h2 {
-  font-size: 30px;
-  color: rgb(128, 41, 0);
-  margin: 30px;
+img {
+  width: 400px;
 }
 
-h3 {
-  font-size: 20px;
-  color: rgb(128, 41, 0);
-  margin: 35px;
-  
-}
 p {
-  color:rgb(94, 31, 31);
-  margin-top: 10px;
-  margin: 10px;
-  padding-left: 40px;
-
+  padding: 15px;
+  font-size: 20px;
+  color:  #7a0d0d;
 }
+h2 {
+    font-size: 25px;
+    color:  #7a0d0d;
+    margin: 40px;
+  }
+
 ul {
   list-style-type: disc;
-  margin-left: 200px;
+  margin-left: 70px;
+  color:  #69390b;
+  font-size: 20px;
+ 
 }
 
 ol {
   list-style-type: decimal;
-  margin-left: 200px;
+  margin-left: 70px;
+  color:  #69390b;
+  font-size: 20px;
+  padding-bottom: 40px;
 }

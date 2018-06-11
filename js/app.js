@@ -78,17 +78,15 @@ var cityCorrected = false;
 var visitedCity = ['san francisco', 'chicago', 'st.louis', 'las vegas', 'minnesota'];
 
 cityCorrected = guessCity();
-if (cityCorrected === false); {
+if (cityCorrected === false) {
   cityCorrected = guessCity();
-  if (cityCorrected === false); {
+  if (cityCorrected === false) {
     cityCorrected = guessCity();
-    if (cityCorrected === false); {
+    if (cityCorrected === false) {
       cityCorrected = guessCity();
-      if (cityCorrected === false); {
+      if (cityCorrected === false) {
         cityCorrected = guessCity();
-        if (cityCorrected === false); {
-          cityCorrected = guessCity();
-          cityCorrected = false;
+        if (cityCorrected === false) {
           alert('Your guesses are close but that is the 6th attempt.  The cities that I visited are San Francisco, Chicago, St.Louis, Las Vegas, Minnesota');
         }
       }

@@ -60,6 +60,7 @@ function guessNieces() {
   console.log('User input for number of nices : '+ userInput);
   if (userInput === 5) {
     alert('Fantastic guess and ' + userInput + ' is correct!');
+    counter++;
     return true;
 
   } else if (userInput > 5) {
@@ -99,6 +100,7 @@ function guessCity() {
   console.log('User input City: ' + userInput);
   if (visitedCity.includes(userInput)) {
     alert('That is correct!  Here are the cities that I visited: San Francisco, Chicago, St.Louis, Las Vegas, Minnesota');
+    counter++;
     return true;
   }
   return false;
